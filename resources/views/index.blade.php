@@ -1,4 +1,4 @@
-@extends('partials.layout')
+@extends('layout')
 
 @section('content')
     @unless(count($articles) === 0)
