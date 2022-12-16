@@ -9,7 +9,7 @@
         <div class="row g-5">
             <div class="col-md-8">
                 <h1 class="pb-4 mb-4 fst-italic border-bottom">
-                    Blog Articles
+                    Latest Articles
                 </h1>
 
                 @foreach($articles as $article)
@@ -30,6 +30,7 @@
                 @endforeach
 
                 @include('partials.pagination')
+            </div>
 
     @else
         <p>No articles found.</p>
