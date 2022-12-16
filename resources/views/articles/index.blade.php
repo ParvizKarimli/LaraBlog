@@ -15,7 +15,9 @@
                 @foreach($articles as $article)
                     <article class="blog-post">
                         <h2 class="blog-post-title mb-1">
-                            {{ $article->title }}
+                            <a href="/articles/{{ $article->id }}">
+                                {{ $article->title }}
+                            </a>
                         </h2>
 
                         <p class="blog-post-meta">

@@ -16,7 +16,7 @@ class ArticleController extends Controller
     {
         $articles = Article::latest()->paginate(10);
 
-        return view('index', compact('articles'));
+        return view('articles.index', compact('articles'));
     }
 
     /**
@@ -48,7 +48,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('articles.show', compact('article'));
     }
 
     /**
