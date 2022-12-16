@@ -10,26 +10,20 @@
 </div>
 
 <main class="container">
-    @include('partials.featured')
+    @yield('content')
 
-    @include('partials.features')
+            </div>
 
-    <div class="row g-5">
-        <div class="col-md-8">
-            @yield('content')
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    @include('partials.about')
 
-        </div>
+                    @include('partials.archives')
 
-        <div class="col-md-4">
-            <div class="position-sticky" style="top: 2rem;">
-                @include('partials.about')
-
-                @include('partials.archives')
-
-                @include('partials.elsewhere')
+                    @include('partials.elsewhere')
+                </div>
             </div>
         </div>
-    </div>
 
 </main>
 

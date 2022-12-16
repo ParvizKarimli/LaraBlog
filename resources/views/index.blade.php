@@ -2,28 +2,34 @@
 
 @section('content')
     @unless(count($articles) === 0)
-        <h1 class="pb-4 mb-4 fst-italic border-bottom">
-            Blog Articles
-        </h1>
+        @include('partials.featured')
 
-        @foreach($articles as $article)
-            <article class="blog-post">
-                <h2 class="blog-post-title mb-1">
-                    {{ $article->title }}
-                </h2>
+        @include('partials.features')
 
-                <p class="blog-post-meta">
-                    {{ $article->created_at->toFormattedDateString() }} by <a href="#">Mark</a>
-                </p>
+        <div class="row g-5">
+            <div class="col-md-8">
+                <h1 class="pb-4 mb-4 fst-italic border-bottom">
+                    Blog Articles
+                </h1>
 
-                <p>
-                    {{ $article->body }}
-                </p>
-                <hr>
-            </article>
-        @endforeach
+                @foreach($articles as $article)
+                    <article class="blog-post">
+                        <h2 class="blog-post-title mb-1">
+                            {{ $article->title }}
+                        </h2>
 
-        @include('partials.pagination')
+                        <p class="blog-post-meta">
+                            {{ $article->created_at->toFormattedDateString() }} by <a href="#">Mark</a>
+                        </p>
+
+                        <p>
+                            {{ $article->body }}
+                        </p>
+                        <hr>
+                    </article>
+                @endforeach
+
+                @include('partials.pagination')
 
     @else
         <p>No articles found.</p>
