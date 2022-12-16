@@ -25,7 +25,7 @@
                         </p>
 
                         <p>
-                            {{ $article->body }}
+                            {{ Str::words($article->body, 10, '...') }}
                         </p>
                         <hr>
                     </article>
