@@ -40,11 +40,16 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'category' => [
+                'required',
+                Rule::in(['technology','design','politics','science','travel'])
+            ],
             'title' => 'required|min:2|unique:articles',
             'body' => 'required|min:3'
         ]);
 
         $article = new Article;
+        $article->category = $request->category;
         $article->title = $request->title;
         $article->slug = Str::slug($request->title);
         $article->body = $request->body;
@@ -85,6 +90,10 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $request->validate([
+            'category' => [
+                'required',
+                Rule::in(['technology','design','politics','science','travel'])
+            ],
             'title' => [
                 'required',
                 'min:2',
@@ -93,6 +102,7 @@ class ArticleController extends Controller
             'body' => 'required|min:3'
         ]);
 
+        $article->category = $request->category;
         $article->title = $request->title;
         $article->slug = Str::slug($request->title);
         $article->body = $request->body;

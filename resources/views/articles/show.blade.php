@@ -12,6 +12,10 @@
                 </h2>
 
                 <p class="blog-post-meta">
+                    {{ $article->category }}
+                </p>
+
+                <p class="blog-post-meta">
                     {{ $article->created_at->toFormattedDateString() }} by <a href="#">Mark</a>
                 </p>
 

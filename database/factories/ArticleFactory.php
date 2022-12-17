@@ -20,6 +20,7 @@ class ArticleFactory extends Factory
         $title = $this->faker->sentence();
 
         return [
+            'category' => $this->faker->randomElement(['technology','design','politics','science','travel']),
             'title' => $title,
             'slug' => Str::slug($title),
             'body' => $this->faker->paragraph(5)
