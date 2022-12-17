@@ -22,7 +22,7 @@
                 <hr>
             </article>
 
-            <a href="/articles/{{ $article->id }}/edit" class="btn bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+            <a href="/articles/{{ $article->id }}/{{ $article->slug }}/edit" class="btn bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                 Edit
             </a>
 

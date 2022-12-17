@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class ArticleController extends Controller
@@ -45,6 +46,7 @@ class ArticleController extends Controller
 
         $article = new Article;
         $article->title = $request->title;
+        $article->slug = Str::slug($request->title);
         $article->body = $request->body;
         $article->save();
 
@@ -92,6 +94,7 @@ class ArticleController extends Controller
         ]);
 
         $article->title = $request->title;
+        $article->slug = Str::slug($request->title);
         $article->body = $request->body;
         $article->update();
 
