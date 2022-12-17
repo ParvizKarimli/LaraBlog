@@ -82,6 +82,8 @@
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/5.2/examples/blog/blog.css" rel="stylesheet">
 
+    <script src="//unpkg.com/alpinejs" defer></script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {

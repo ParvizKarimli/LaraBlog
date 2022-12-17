@@ -26,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
@@ -37,7 +37,17 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        $article = new Article;
+        $article->title = $request->title;
+        $article->body = $request->body;
+        $article->save();
+
+        return redirect('/')->with('message', 'Article created successfully.');
     }
 
     /**
