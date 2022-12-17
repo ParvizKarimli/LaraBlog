@@ -18,7 +18,12 @@
                 <p>
                     {{ $article->body }}
                 </p>
+
                 <hr>
             </article>
+
+            <a href="/articles/{{ $article->id }}/edit" class="btn bg-yellow-500 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Edit
+            </a>
         </div>
 @endsection

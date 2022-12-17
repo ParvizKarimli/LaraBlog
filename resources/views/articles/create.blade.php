@@ -10,7 +10,7 @@
 
             <div class="form-group">
                 <label for="title">Article Title:</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Enter article title...">
+                <input type="text" class="form-control" id="title" name="title" placeholder="Enter article title..." value="{{ old('title') }}">
             </div>
             @error('title')
                 <p class="text-red-500 text-xs mt-1">
@@ -20,7 +20,7 @@
 
             <div class="form-group">
                 <label for="body">Article Body:</label>
-                <textarea rows="10" class="form-control" id="body" name="body" placeholder="Enter article body..."></textarea>
+                <textarea rows="10" class="form-control" id="body" name="body" placeholder="Enter article body...">{{ old('body') }}</textarea>
             </div>
             @error('body')
                 <p class="text-red-500 text-xs mt-1">

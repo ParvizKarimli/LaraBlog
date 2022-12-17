@@ -38,8 +38,8 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'body' => 'required'
+            'title' => 'required|min:2',
+            'body' => 'required|min:3'
         ]);
 
         $article = new Article;
@@ -69,7 +69,7 @@ class ArticleController extends Controller
      */
     public function edit(Article $article)
     {
-        //
+        return view('articles.edit', compact('article'));
     }
 
     /**
@@ -81,7 +81,16 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-        //
+        $request->validate([
+            'title' => 'required|min:2',
+            'body' => 'required|min:3'
+        ]);
+
+        $article->title = $request->title;
+        $article->body = $request->body;
+        $article->update();
+
+        return redirect('/')->with('message', 'Article updated successfully.');
     }
 
     /**
