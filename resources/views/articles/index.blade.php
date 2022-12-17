@@ -25,7 +25,7 @@
                         </p>
 
                         <p>
-                            {{ Str::words($article->body, 10, '...') }} <a class="text-blue" href="/articles/{{ $article->id }}/{{ $article->slug }}">Read More</a>
+                            {{ Str::words($article->body, 10, '...') }} <a href="/articles/{{ $article->id }}/{{ $article->slug }}">Read More</a>
                         </p>
                         <hr>
                     </article>
