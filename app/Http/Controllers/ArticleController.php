@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ArticleController extends Controller
 {
@@ -38,7 +39,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|min:2',
+            'title' => 'required|min:2|unique:articles',
             'body' => 'required|min:3'
         ]);
 
@@ -82,7 +83,11 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $request->validate([
-            'title' => 'required|min:2',
+            'title' => [
+                'required',
+                'min:2',
+                Rule::unique('articles')->ignore($article->id)
+            ],
             'body' => 'required|min:3'
         ]);
 
