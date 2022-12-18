@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
@@ -20,7 +21,16 @@ class ArticleController extends Controller
             ->filter(request(['category']))
             ->paginate(10);
 
-        return view('articles.index', compact('articles'));
+            $archives = Article::selectRaw('
+                    year(created_at) year, 
+                    monthname(created_at) as month, 
+                    count(*) number_of_articles
+                ')
+                ->groupBy('year', 'month')
+                ->orderBy('created_at')
+                ->get();
+
+        return view('articles.index', compact('articles', 'archives'));
     }
 
     /**
