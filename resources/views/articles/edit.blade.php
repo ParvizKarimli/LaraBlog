@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-    <div class="row g-5">
+    <div class="row g-5 justify-center text-center">
         <div class="col-md-8">
             <h1 class="h3 mb-3 fw-normal">Edit the article</h1>
 
@@ -46,7 +46,10 @@
                     </p>
                 @enderror
 
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Update
+                </button>
             </form>
         </div>
+    </div>
 @endsection

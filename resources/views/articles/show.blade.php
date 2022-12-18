@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row g-5">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h1 class="pb-4 mb-4 fst-italic border-bottom">
             </h1>
 
@@ -46,4 +46,5 @@
                 @csrf
             </form>
         </div>
+    </div>
 @endsection

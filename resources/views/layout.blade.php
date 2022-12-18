@@ -11,18 +11,6 @@
 
 <main class="container">
     @yield('content')
-
-            <div class="col-md-4">
-                <div class="position-sticky" style="top: 2rem;">
-                    @include('partials.about')
-
-                    @include('partials.archives')
-
-                    @include('partials.elsewhere')
-                </div>
-            </div>
-        </div>
-
 </main>
 
 @include('partials.footer')

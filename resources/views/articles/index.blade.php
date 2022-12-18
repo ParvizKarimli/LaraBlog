@@ -38,6 +38,16 @@
                 @include('partials.pagination')
             </div>
 
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 2rem;">
+                    @include('partials.about')
+
+                    @include('partials.archives')
+
+                    @include('partials.elsewhere')
+                </div>
+            </div>
+        </div>
     @else
         <p>No articles found.</p>
 
