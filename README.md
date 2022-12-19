@@ -1,3 +1,3 @@
 ## LaraBlog
 
-This is my LaraBlog project for publishing blog posts and more.
+This is my template LaraBlog project developed in Laravel for publishing blog posts and more.
